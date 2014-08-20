@@ -5,43 +5,25 @@ This is IP2Location Ruby library that enables the user to find the country, regi
 
 For more details, please visit:
 
-http://www.ip2location.com/ruby.aspx
-http://www.ip2location.com/developers.aspx
-
-This Ruby API supports IP2Location IPv6 through C Library.
-
-Requirements
-------------
-1) IP2Location C API library ( download from http://www.ip2location.com/c.aspx )
-2) Ruby installed
-3) GNU make or any compatible make utility
-
-Installation (Windows/Linux)
-----------------------------
-1) compile C library to produce shared object binary
-1) ruby extconf.rb --with-libIP2Location-lib=<path to C API lib> --with-includeIP2Location-include=<path to C API lib> 
-	 example: ruby extconf.rb --with-libIP2Location-lib=..\C-IP2Location-4.0.2\libIP2Location --with-includeIP2Location-include=..\C-IP2Location-4.0.2\libIP2Location 
-2) make
+http://www.ip2location.com/developers/ruby
 
 
-Installation (Mac OS X)
------------------------
-To install the ruby API under Mac OSX, you will need to compile IP2Location C library into universal binary (.dylib) without using configure script.
+== Usage
 
-1) cd C-IP2Location-4.0.2/libIP2Location
-2) export CFLAGS=-I/usr/include/malloc
-3) gcc -arch i386 -arch x86_64 -arch ppc -c IP2Location.c iMath/imath.c
-4) gcc -arch i386 -arch x86_64 -arch ppc -dynamiclib -current_version 1.0 -o /usr/local/lib/libIP2Location.dylib IP2Location.o imath.o
-5) cd <path>/Ruby-IP2Location-4.0.1
-6) ruby extconf.rb
-7) make
+    i2l = Ip2location.new.open(File.dirname(__FILE__) + "/assets/IP-COUNTRY-SAMPLE.bin")
+    record = i2l.get_all('13.5.10.6')
+    record.should_not be_nil
+    record.country_short.should == 'US'
 
-* Remove parameter "-arch ppc" if your computer do not support this architecture
-
-Testing
--------
-Unix/Linux/Mac platform : ruby sample_bsd.rb 
-Windows platform        : ruby sample_win.rb 
+== Contributing to ip2location
+ 
+* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
+* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
+* Fork the project.
+* Start a feature/bugfix branch.
+* Commit and push until you are happy with your contribution.
+* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
 
 Download More Sample Databases
@@ -51,5 +33,4 @@ unzip samples-db24.zip
 
 
 For support, please email sales@ip2location.com.
-
 http://www.ip2location.com
