@@ -1,3 +1,6 @@
+# Please take note that this thread was no longer maintained and updated. For the latest IP2Location Ruby library, please visit https://github.com/ip2location/ip2location-ruby
+
+
 # IP2Location Ruby 7.0.0
 This is IP2Location Ruby library that enables the user to find the country, region or state, city, latitude and longitude, US ZIP code, time zone, Internet Service Provider (ISP) or company name, domain name, net speed, area code, weather station code, weather station name, mobile country code (MCC), mobile network code (MNC) and carrier brand, elevation, and usage type by IP address or hostname originates from.  The library reads the geo location information
 from **IP2Location BIN data** file.
